@@ -77,7 +77,7 @@ class OMDBApi {
       const response = await this.searchMovies(query, 1)
       return response.Search?.slice(0, 5).map((movie) => movie.Title) || []
     } catch (error) {
-      console.error("Failed to get suggestions:", error)
+      console.log("Failed to get suggestions:", error)
       return []
     }
   }

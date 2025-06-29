@@ -17,7 +17,7 @@ export function SearchBar() {
   const { query, recentSearches } = useAppSelector((state) => state.search)
   const [localQuery, setLocalQuery] = useState(query)
   const [showSuggestions, setShowSuggestions] = useState(false)
-  const debouncedQuery = useDebounce(localQuery, 300)
+  const debouncedQuery = useDebounce(localQuery, 600)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { data: suggestions = [] } = useMovieSuggestions(debouncedQuery)

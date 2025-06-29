@@ -29,14 +29,14 @@ export function MovieCard({ movie, index = 0 }: MovieCardProps) {
         <Card className="movie-card h-full cursor-pointer group">
           <div className="relative overflow-hidden">
             <Image
-              src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.svg?height=400&width=300"}
+              src={movie.Poster !== "N/A" ? movie.Poster : `https://placehold.co/300x400?text=${movie.Title}`}
               alt={movie.Title}
               width={300}
               height={400}
               className="movie-poster group-hover:scale-105 transition-transform duration-300"
               onError={(e) => {
                 const target = e.target as HTMLImageElement
-                target.src = "/placeholder.svg?height=400&width=300"
+                target.src = `https://placehold.co/300x400?text=${movie.Title}`
               }}
             />
             {userRating && (
